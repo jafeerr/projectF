@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<h1>Users</h1>
+<input type="button" ng-model="button" value="showUsers" ng-click="showUsers()"/>
+
+<span ng-repeat="user in users">
+  <br>{{user.name}}
+</span>
+</div>
+
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $scope.showUsers = function() {
+  $http.get("/users")
+  .then(function(response) {
+      $scope.users = response.data;
+  });
+  $scope.button="back";
+};
+});
+</script>
+
+</body>
+</html>

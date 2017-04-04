@@ -4,14 +4,14 @@ var User=require("./dao/dbTest.js");
 
 
 var port = process.env.PORT || 8085;
-app.get('/', function (req, res) {
-   res.send('Hello Jafeer!! Welcome to project F');
-});
 app.get('/users', function (req, res) {
     User.find({}, function (err, docs) {
         res.json(docs);
     });
 });
+app.get('*', function(req, res) {
+        res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
 app.listen(port,function(err){
   if(err){
       console.log(err);
