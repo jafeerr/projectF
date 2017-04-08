@@ -1,5 +1,6 @@
 
 var mongoose = require('mongoose');
+var User=require("../models/User.js")
 // Mongoose connectiono to MongoDB (ted/ted is readonly)
 mongoose.connect('mongodb://root:root@ds143980.mlab.com:43980/projectf', function (error) {
     if (error) {
@@ -7,14 +8,6 @@ mongoose.connect('mongodb://root:root@ds143980.mlab.com:43980/projectf', functio
     }
 });
 
-// Mongoose Schema definition
-var Schema = mongoose.Schema;
-var UserSchema = new Schema({
-    name: String
-});
-
-// Mongoose Model definition
-var User = mongoose.model('user', UserSchema);
 
 
 module.exports=User;
