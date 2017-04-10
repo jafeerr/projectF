@@ -10,6 +10,5 @@ var UserSchema = new Schema({
 
 // Mongoose Model definition
 var User = mongoose.model('user', UserSchema);
-console.log("coming inside ");
 
 module.exports=User;
