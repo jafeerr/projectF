@@ -15,7 +15,7 @@ exports.addProduct=function(productName,category,price,description,callback)
     price:price,
     description:description
   });
-  product.save(function(err) {
+  product.save(function(err,results) {
   if (err)
   {
     log.info("error",err);
