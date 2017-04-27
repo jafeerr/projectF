@@ -22,10 +22,8 @@ exports.addProduct=function(productName,category,price,description,callback)
     callback(false);
   }
   else {
-
       console.log('Product added successfully!');
       callback(true);
-
   }
 
 
